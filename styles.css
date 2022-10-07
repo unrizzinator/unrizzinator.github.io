@@ -1,15 +1,30 @@
 body {
-    background: rgb(17, 124, 218);
-    background-image: url(src/img/mc.png);
+    background: rgb(19, 19, 19);
+    /* background-image: url(src/img/mc.png);
     background-size: 100% auto;
+    background-repeat: no-repeat; */
     margin: 0;
     padding: 0;
+}
+
+@font-face {
+    font-family: main;
+    src: url(src/fonts/FredokaOne-Regular.ttf);
+}
+
+* {
+    font-family: main;
 }
 
 @keyframes fadein {
     0% {backdrop-filter: brightness(0%);}
     50% {backdrop-filter: brightness(90%);}
     100% {backdrop-filter: brightness(90%); background: linear-gradient(25deg rgba(255, 0, 0, 0.2), transparent, rgba(0, 0, 255, 0.2));}
+}
+
+@keyframes slidein {
+    from {top: 4rem; opacity: 0;}
+    to {top: 2rem; opacity: 1;}
 }
 
 .bg {
@@ -19,26 +34,69 @@ body {
     left: 0%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.0) 20%);
+    background-image: url(src/img/mc.png);
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    /* background: linear-gradient(115deg, rgba(255, 255, 255, 0.1), transparent, rgba(255, 255, 255, 0.1)); */
     backdrop-filter: brightness(0%);
     animation: fadein 2s cubic-bezier(.47,.1,.5,1) forwards; 
 }
 
-.container {
-    position: fixed;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    width: 40rem;
-    height: 18rem;
-    background: #202020;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-    transition: 0.3s ease-out;
-    z-index: 3;
+@media (max-width: 721px) {
+    .container {
+        position: fixed;
+        top: 101%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        width: 100%;
+        height: 50%;
+        background: #1e1e1e;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        transition: 0.3s ease-out;
+        z-index: 3;
+    }
+    
+    /* .container:hover {
+        height: 60%;
+    } */
 }
 
-.container:hover {
-    height: 22rem;
+@media (min-width: 722px) {
+    .container {
+        position: fixed;
+        top: 101%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        width: 60%;
+        height: 30%;
+        background: #1e1e1e;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        transition: 0.3s ease-out;
+        z-index: 3;
+    }
+    
+    .container:hover {
+        height: 32%;
+    }
+}
+
+.message {
+    color: white;
+    font-weight: normal;
+    width: fit-content;
+    max-width: calc(100% - 2rem);
+    height: fit-content;
+    font-size: 20px;
+    text-align: left;
+    position: absolute;
+    left: 50%;
+    top: 2rem;
+    transform: translate(-50%, 0%);
+    z-index: 2;
 }
