@@ -18,9 +18,11 @@ var firstScreen = true;
 function notify(msg) {
     notificationBadge.innerHTML = `${msg}`;
     notificationBadge.style.top = "1rem";
+    notificationBadge.style.opacity = "1";
     setTimeout(function(){
         notificationBadge.style.top = "-2.5rem";
-    }, 5000)
+        notificationBadge.style.opacity = "0";
+    }, 7000)
 }
 
 const _form = document.querySelector('.form');
