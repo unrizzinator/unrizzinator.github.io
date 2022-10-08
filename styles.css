@@ -149,7 +149,7 @@ button {
     position: relative;
     width: calc(100% - 1rem);
     height: calc(100% - 0.5rem);
-    background:rgb(0, 0, 0);
+    background:rgb(0, 119, 255);
     border: none;
     color: white;
     border-radius: 8px;
@@ -164,8 +164,7 @@ button {
 
 .choose:hover {
     width: calc(100% - .5rem);
-    background: rgb(38, 153, 67);
-
+    background: rgb(0, 153, 255);
 }
 
 .form {
@@ -188,16 +187,17 @@ button {
     height: 3rem;
     padding: 0;
     margin: 0;
-    border: 1px solid gray;
+    border: none;
     border-radius: 8px;
     text-indent: 1rem;
     outline: none;
     font-size: 14px;
-    transition: outline 100ms ease-in-out;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.308);
+    transition: outline 40ms ease-in-out;
 }
 
 .form input:focus {
-    outline: 2px solid rgb(38, 153, 67);
+    outline: 5px solid rgba(1, 103, 255, 0.459);
 }
 
 .form button {
@@ -205,7 +205,7 @@ button {
     height: 3rem;
     padding: 0;
     margin: 0;
-    background: black;
+    background: rgb(0, 119, 255);
     font-size: 20px;
     color: white;
     border: none;
@@ -216,5 +216,9 @@ button {
 
 .form button:hover {
     width: calc(100% + 12px);
-    background: rgb(38, 153, 67);
+    background: rgb(0, 153, 255);
+}
+
+.form button span {
+    transform: skew(15deg);
 }
