@@ -155,3 +155,53 @@ body {
     background: rgb(38, 153, 67);
 
 }
+
+.form {
+    position: absolute;
+    background: none;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    top: 8rem;
+    width: 20rem;
+    max-width: calc(100% - 4rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.form input {
+    width: 100%;
+    height: 3rem;
+    padding: 0;
+    margin: 0;
+    border: 1px solid gray;
+    border-radius: 8px;
+    text-indent: 1rem;
+    outline: none;
+    font-size: 20px;
+    transition: outline 200ms ease-in-out;
+}
+
+.form input:focus {
+    outline: 2px solid rgb(38, 153, 67);
+}
+
+.form button {
+    width: calc(100% + 6px);
+    height: 3rem;
+    padding: 0;
+    margin: 0;
+    background: black;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: width 200ms ease-in-out;
+}
+
+.form button:hover {
+    width: calc(100% + 12px);
+    background: rgb(38, 153, 67);
+}
