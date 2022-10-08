@@ -2,7 +2,16 @@ const container = document.querySelector('div.container');
 const confirmB = document.querySelector('button#confirm');
 const confirmS = document.querySelector('div.firstscreen');
 const signupScreen = document.querySelector('div.signup');
+const serverDetails = document.querySelector('div.details');
+const signupB = document.querySelector('#signup');
 const notificationBadge = document.querySelector('#notificationBadge');
+
+document.querySelectorAll('[data-server-info]').forEach(item => {
+    item.onclick = () => {
+        item.focus();
+        item.select(0, 200);
+    }
+});
 
 var firstScreen = true;
 
@@ -17,6 +26,7 @@ function notify(msg) {
 const _form = document.querySelector('.form');
 _form.addEventListener("submit", function(e) {
     e.preventDefault();
+    signupB.disabled = true;
     const data = new FormData(_form);
     const action = e.target.action;
     fetch(action, {
@@ -24,7 +34,11 @@ _form.addEventListener("submit", function(e) {
         body: data,
     })
     .then((e) => {
-        notify('You are now signed up!')
+        notify('You are now signed up! Please wait to be whitelisted.');
+        setTimeout(function(){
+            signupScreen.style.left = "-100%";
+            serverDetails.style.left = "0%";
+        },Math.random()*100)
     });
 });
 
