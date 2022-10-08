@@ -9,7 +9,7 @@ body {
 
 @font-face {
     font-family: main;
-    src: url(src/fonts/FredokaOne-Regular.ttf);
+    src: url(src/fonts/Bayon-Regular.ttf);
 }
 
 * {
@@ -50,11 +50,11 @@ body {
         top: 101%;
         left: 50%;
         transform: translate(-50%, -100%);
-        width: 100%;
-        height: 50%;
-        background: #1e1e1e;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
+        width: 101%;
+        height: 30%;
+        background: #0f0f0f;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
         transition: 0.3s ease-out;
         z-index: 3;
@@ -73,30 +73,70 @@ body {
         transform: translate(-50%, -100%);
         width: 60%;
         height: 30%;
-        background: #1e1e1e;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
+        background: #0f0f0f;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
         transition: 0.3s ease-out;
         z-index: 3;
     }
     
-    .container:hover {
+    /* .container:hover {
         height: 32%;
-    }
+    } */
 }
 
 .message {
     color: white;
     font-weight: normal;
-    width: fit-content;
+    width: calc(100% - 2rem);
     max-width: calc(100% - 2rem);
-    height: fit-content;
-    font-size: 20px;
-    text-align: left;
+    height: 2rem;
+    line-height: 32px;
+    font-size: 24px;
+    letter-spacing: .5px;
+    text-align: center;
     position: absolute;
     left: 50%;
     top: 2rem;
     transform: translate(-50%, 0%);
     z-index: 2;
+}
+
+.buttons {
+    position: absolute;
+    height: 4rem;
+    width: auto;
+    aspect-ratio: 32/6;
+    left: 50%;
+    top: 6rem;
+    transform: translate(-50%, 0%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.choose {
+    position: relative;
+    width: calc(100% - 1rem);
+    height: calc(100% - 0.5rem);
+    background:rgb(46, 46, 46);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 200ms ease-in-out;
+}
+
+.green {
+    background: rgb(38, 153, 67);
+}
+
+.choose:hover {
+    width: calc(100% - .5rem);
+    font-size: 16px;
+    background: rgb(38, 153, 67);
+
 }
