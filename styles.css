@@ -26,9 +26,9 @@ input {
 }
 
 @keyframes fadein {
-    0% {backdrop-filter: brightness(0%);}
-    50% {backdrop-filter: brightness(90%);}
-    100% {backdrop-filter: brightness(90%); background: linear-gradient(25deg rgba(255, 0, 0, 0.2), transparent, rgba(0, 0, 255, 0.2));}
+    from {filter: brightness(0%);}
+    to {filter: brightness(90%);}
+    /* 100% {backdrop-filter: brightness(90%); background: linear-gradient(25deg rgba(255, 0, 0, 0.2), transparent, rgba(0, 0, 255, 0.2));} */
 }
 
 @keyframes slidein {
@@ -53,8 +53,9 @@ button {
     background-position: 50% 50%;
     background-size: cover;
     /* background: linear-gradient(115deg, rgba(255, 255, 255, 0.1), transparent, rgba(255, 255, 255, 0.1)); */
-    backdrop-filter: brightness(0%);
+    filter: brightness(0%);
     animation: fadein 2s cubic-bezier(.47,.1,.5,1) forwards; 
+    z-index: 1;
 }
 
 #notificationBadge {
@@ -170,6 +171,8 @@ button {
     top: 50%;
     transform: translate(-50%, 0%);
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
     justify-content: space-evenly;
     align-items: center;
 }
