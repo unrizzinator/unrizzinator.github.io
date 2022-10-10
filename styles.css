@@ -68,6 +68,7 @@ button {
     color:rgb(9, 139, 9);
     display: flex;
     justify-content: center;
+    z-index: 10;
     align-items: center;
     transition: 200ms ease-in-out;
 }
