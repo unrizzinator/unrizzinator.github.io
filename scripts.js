@@ -17,7 +17,7 @@ document.querySelectorAll('[data-server-info]').forEach(item => {
 alreadySignedUp.onclick = () => {
     confirmS.style.left = "-100%";
     container.style.height = "60%";
-    signupScreen.style.left = "-100%";
+    // signupScreen.style.left = "-100%";
     serverDetails.style.left = "0%";
 }
 
