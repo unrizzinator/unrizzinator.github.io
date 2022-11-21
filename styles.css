@@ -18,3 +18,10 @@ body {
     color: white;
 }
 
+.me {
+    position: absolute;
+    left: 100%;
+    transform: translate(-100%, -50%);
+    height: 100%;
+    width: auto;
+}
