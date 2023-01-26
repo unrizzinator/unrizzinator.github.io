@@ -1,0 +1,182 @@
+@font-face {
+    font-family: main;
+    src: url(../src/all/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
+body {
+    background: black;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: main;
+    color: #f0f0f0;
+    outline: none;
+}
+
+@keyframes fadeinout {
+    0% {transform: scale(0.5); filter: blur(500px) brightness(30%) hue-rotate(0deg);}
+    100% {transform: scale(0.5); filter: blur(500px) brightness(25%) hue-rotate(-20deg);}
+}
+
+@keyframes scaleUp {
+    0% {transform: scale(0.2); filter: blur(500px) brightness(0%);}
+    100% {transform: scale(0.5); filter: blur(500px) brightness(30%);}
+}
+
+.tmp-nolink {
+    text-decoration: none;
+    color: unset;
+}
+
+.right {float: right; gap: .5rem;}
+
+.tmp-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bg .bg-shape {
+    transform: scale(0);
+    filter: blur(500px) brightness(0%);
+    animation: 3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 forwards scaleUp;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.navbar-top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 100%;
+    max-width: 1600px;
+    height: 6rem;
+    z-index: 10;
+    /* border-bottom: 2px solid rgba(255, 255, 255, 0.089); */
+    /* background: rgba(0, 0, 0, 0.1); */
+    /* backdrop-filter: blur(10px); */
+}
+
+.navbar-top .wrap {
+    width: 80vw;
+    min-width: 80%;
+    max-width: 1600px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background: red; */
+}
+
+.ico {
+    width: 24px;
+    height: auto;
+    aspect-ratio: 1/1;
+    fill: rgb(255, 255, 255);
+}
+
+.wrap #typewrite {
+    width: fit-content;
+    height: 100%;
+    font-weight: unset;
+    color:  white;
+}
+
+.lol {
+    color: rgb(0, 107, 168);
+    background:rgba(120, 201, 248, 0.1);
+    margin-left: .5rem;
+    padding: 0rem .3rem 0rem .3rem;
+    font-size: small;
+    font-weight: 800;
+    border: 1px solid rgb(0, 107, 168);
+    border-bottom: 2px solid rgb(0, 107, 168);
+    border-radius: 5px;
+    box-shadow: 0px 0px 13px 1px rgb(0, 107, 168, 0.3);
+}
+
+.content {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 100%;
+    max-width: 1600px;
+    height: 100%;
+}
+
+.content h1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    font-size: 80px;
+    text-align: center;
+}
+
+.content h3 {
+    position: relative;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    font-size: large;
+    text-align: center;
+    color:rgba(255, 255, 255, 0.2);
+}
+
+.content .buttons {
+    position: relative;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.buttons .white {
+    width: 250px;
+    height: 50px;
+    background: white;
+    border-radius: 5px;
+    border: none;
+    outline: 3px solid rgba(255, 255, 255, 1);
+    color:rgb(15, 15, 15);
+    cursor: pointer;
+    transition: 75ms ease-in-out;
+    box-shadow: 0px 0px 13px 1px rgba(255, 255, 255, 0.5);
+}
+
+.buttons .clear {
+    width: 250px;
+    height: 50px;
+    background: linear-gradient(-70deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.15));
+    border: none;
+    outline: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 75ms ease-in-out;
+}
+
+.white:hover {background: rgba(255 ,255, 255, 0.8); outline: 3px solid rgba(255 ,255, 255, 0.8);}
+.clear:hover {outline: 3px solid rgba(255 ,255, 255, 0.3);}
