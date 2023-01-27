@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="src/ico/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
     <title>Home Page Or Somethin'</title>
 </head>
-<body>
-    <div class="bg tmp-center">
-        <img src="src/svg/somethin.svg" class="bg-shape" id="bg-shape">
-    </div>
+<body onload="stt()">
+    <div id="back_to_top" class="sts_hidden" onclick="sts(0)">/\</div>
     <div class="navbar-top tmp-center">
         <div class="wrap">
             <a href="https://voltaicmimic431.github.io/" class="tmp-nolink">
@@ -25,9 +22,21 @@
         </div>
     </div>
     <div class="content">
-        <h1>I live in your<br>mother's basement.</h1>
-        <h3>You may want to go check.</h3>
-        <div class="buttons"><button class="white">Ok cool I guess</button><button class="clear">😐</button></div>
+        <div class="section">
+            <div class="bg tmp-center">
+                <img src="src/svg/somethin.svg" class="bg-shape" id="bg-shape">
+            </div>
+            <h1>I live in your<br>mom's basement lol.</h1>
+            <h3>You may want to go check.</h3>
+            <div class="buttons"><button class="white" onclick="sts(1)">No way.. How?</button><button class="clear" onclick="sts(2)">Booooo! Think of a better "joke".</button></div>
+        </div>
+        <div class="section">
+            <h1 content-slide-in>I was kicked down the stairs by her (she mean).</h1>
+            <h3>Now I'm just chilling here, in the dark.</h3>
+        </div>
+        <div class="section">
+            <h1>no i cant think of anything else</h1>
+        </div>
     </div>
 </body>
 </html>
