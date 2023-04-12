@@ -20,7 +20,7 @@ function bg_shape_fade() {
 } bg_shape_fade()
 
 function check_LoS() {
-    let TH = (window.scrollY + window.innerHeight) - 20 // Threshold is set 20 pixel from bottom
+    let TH = (window.scrollY + window.innerHeight) - 20
     slide_in_objects.forEach(obj => {
         if (obj.clientTop < TH) {obj.classList.remove('hidden')}
         else {console.log(obj); obj.classList.add('hidden')}
