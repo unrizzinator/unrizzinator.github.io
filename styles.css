@@ -4,7 +4,71 @@
     font-family: 'lexend';
 }
 
+@keyframes loadup {
+    0% {
+        left: 0;
+        width: 0;
+        transform: translate(0%, 0%);
+    }
+    50% {
+        left: 50%;
+        width: 50%;
+        transform: translate(-50%, 0%);
+    }
+    100% {
+        left: 100%;
+        width: 0%;
+        transform: translate(-100%, 0%);
+    }
+}
+
 body {
-    background: #202020;
-    color: #efefef;
+    background: #efefef;
+    color: #303030;
+}
+
+#welcome {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: .5em;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 5px solid transparent;
+    outline: 0px 0px 0px 10px transparent;
+    transition: .3s cubic-bezier(.27,.52,.32,1);
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+        backdrop-filter: invert() contrast(200%);
+        width: 0px;
+        height: 100%;
+        transition: width .2s ease-out;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0px;
+        height: 2px;
+        background: #303030;
+        animation: .3s loadup linear 1.2s;
+    }
+}
+
+#welcome:hover {
+
+    &::before {
+        width: 100%;
+    }
 }
