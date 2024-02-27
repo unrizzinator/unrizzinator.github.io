@@ -1,4 +1,6 @@
 const welcomeElement = document.getElementById('welcome')
+const burgerElement = document.getElementById('burger')
+const navigationElement = document.getElementById('nav')
 
 function typewrite(el, interval) {
     let originalContent = `${el.innerText}`
@@ -24,5 +26,11 @@ function expandText(el) {
     }, 500)
 }
 
+function toggleNavMenu() {
+    navigationElement.classList.toggle('show')
+}
+
 typewrite(welcomeElement, 35)
 setTimeout(function(){expandText(welcomeElement)}, 300)
+
+burgerElement.onclick = toggleNavMenu
