@@ -3,8 +3,13 @@
     src: url(./src/fonts/Lexend-VariableFont_wght.ttf);
 }
 
+@font-face {
+    font-family: 'code';
+    src: url(./src/fonts/CascadiaCode.ttf);
+}
+
 * {
-    font-family: 'lexend';
+    font-family: 'code';
     outline: none;
 }
 
@@ -32,7 +37,7 @@ h1 {
 
 p, li {
     font-size: 1.5rem;
-    line-height: 200%;
+    line-height: 150%;
     color: #dbdbdb;
     padding-bottom: 2rem;
 }
@@ -53,13 +58,49 @@ iframe {
     width: 100%;
     height: 100%;
     filter: brightness(20%) blur(50px);
-    /* background-image: url(./src/img/GradientBackground.png); */
     background-image: linear-gradient(to top, #0004, transparent);
     background-size: cover;
-    /* background-image: linear-gradient(-45deg, black 80%, #444 80%);
-    background-size: 20px 20px;
-    background-position: 50% 50%; */
     z-index: -1;
+}
+
+.cover {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    pointer-events: none !important;
+    z-index: 5;
+}
+
+.cover .leftCurtain, .cover .rightCurtain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    transition: 1250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cover .leftCurtain::after, .cover .rightCurtain::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(to left, #444 18px, #101010 20px);
+    transform: translate(-100%, -50%) skew(-15deg);
+    width: 100%;
+    height: calc(100% + 2px);
+    z-index: 1;
+}
+
+.cover .rightCurtain::after {
+    background: linear-gradient(to right, #888 18px, #060606 20px);
+    transform: translate(0%, -50%) skew(-15deg);
+    left: 50%;
 }
 
 .wrapper {
@@ -70,12 +111,17 @@ iframe {
     width: 60%;
     height: fit-content;
     min-height: calc(100vh - 4rem);
-    /* border-left: 1px dashed white;
-    border-right: 1px dashed white; */
     border: 1px dashed #fff4;
     margin-bottom: 6rem;
     padding: 0 2rem 0 2rem;
     z-index: 1;
+}
+
+.wrapper .content {
+    position: relative;
+    opacity: 0;
+    transition: opacity 1s ease-out, top 500ms ease-out;
+    top: 5rem;
 }
 
 .topbar {
@@ -86,9 +132,9 @@ iframe {
     height: 4rem;
     display: flex;
     flex-direction: row;
-    background: rgb(12, 12, 12);
+    background: rgb(2, 2, 2);
     backdrop-filter: blur(50px);
-    z-index: 5;
+    z-index: 4;
 }
 
 .topbar button {
@@ -142,8 +188,8 @@ iframe {
         font-size: 2rem;
     }
 
-    p {
-        font-size: 1.2rem;
+    p, li {
+        font-size: 1.1rem;
     }
 
     .topbar {
