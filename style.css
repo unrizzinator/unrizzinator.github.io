@@ -36,7 +36,7 @@ h1 {
 }
 
 p, li {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     line-height: 150%;
     color: #dbdbdb;
     padding-bottom: 2rem;
@@ -189,7 +189,7 @@ iframe {
     }
 
     p, li {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .topbar {
